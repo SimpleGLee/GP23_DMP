@@ -123,8 +123,8 @@ object Txt2Parquet {
 
     val df: DataFrame = sqlContext.createDataFrame(rowRDD,SchemaUtil.structType)
 
-    //println(df)
-    //df.write.parquet(outputPath)
+    println(df)
+    df.write.parquet(outputPath)
 
     //关闭
     sc.stop()

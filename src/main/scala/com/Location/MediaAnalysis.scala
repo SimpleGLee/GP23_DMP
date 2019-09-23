@@ -37,7 +37,7 @@ object MediaAnalysis {
     //读取数据文件
     val df: DataFrame = spark.read.parquet(inputPath)
     df.rdd.map(row=>{
-      //获取没提相关字段
+      //获取媒体相关字段
       var appname: String = row.getAs[String]("appname")
       if(StringUtils.isBlank(appname)){
         appname = broadcast.value.getOrElse(row.getAs[String]("appid"),"unknow")
